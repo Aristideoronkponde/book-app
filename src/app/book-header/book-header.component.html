@@ -1,0 +1,21 @@
+<header>
+  <nav>
+    <a href="#" class="logo">
+      <img [src]="logo" alt="" width="100px" />
+    </a>
+    <ul>
+      <li><a href=""> Home</a></li>
+      <li><a href=""> Books</a></li>
+      <li><a href=""> Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<div>
+  <button (click)="afficheForm()" *ngIf="!affiche">
+    Afficher le formulaire d'enregistrement
+  </button>
+  <button (click)="afficheForm()" *ngIf="affiche">
+    Cacher le formulaire d'enregistrement
+  </button>
+</div>
+

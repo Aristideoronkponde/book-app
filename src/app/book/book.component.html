@@ -1,0 +1,13 @@
+<div class="container">
+    <!-- Entete de notre site -->
+    <app-book-header (passValue)="recupValue($event)"></app-book-header>
+
+    <!-- Formulaire de notre site -->
+    <app-book-form [affiche]="getChild"></app-book-form>
+
+    <!-- tableau d'affichage des livres de notre site -->
+    <app-book-list></app-book-list>
+
+    <!-- Pied de page de notre site -->
+  <app-book-footer></app-book-footer>
+</div>
