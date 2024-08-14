@@ -1,5 +1,7 @@
 import { style } from '@angular/animations';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Book } from '../book';
+import { ServiceBooksService } from '../service-books.service';
 
 @Component({
   selector: 'app-book-list',
@@ -21,12 +23,15 @@ import { Component } from '@angular/core';
 //       list-style:none;
 //     }`,
 // })
-export class BookListComponent {
+export class BookListComponent implements OnInit {
   name : string ="Aristide";
-  
-  books=[
-    {id:1, title:"Zero bogue", author:"kate", status:"encour"},
-    {id:2, title:"Clean Code", author:"Robert", status:"encour"},
-    {id:3, title:"Le programmeur pragmatique", author:"kate", status:"encour"},
-  ]
+  books?:Book[]
+
+  constructor(private BooksService : ServiceBooksService){}
+
+  ngOnInit():void{
+    this.books=this.BooksService.getBooks()
+    
+    
+  }
 }

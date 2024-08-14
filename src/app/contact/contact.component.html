@@ -1,0 +1,34 @@
+<h1>Mon formulaire</h1>
+<p *ngIf="contactForm.status ==='VALID' ">les champs nom et email sont requis</p>
+<form (submit)="onSubmit()" [formGroup]="contactForm">
+  <div>
+    <label for="">Nom</label>
+    <input type="text" id=""  formControlName="name">
+  </div>
+  <div>
+    <label for="">Email</label>
+    <input type="email" id="" formControlName="email"  >
+  </div>
+  <div>
+    <label for="">telephone</label>
+    <input type="tel" id=""  formControlName="tel">
+  </div>
+  <div>
+    <label>Message</label>
+    <textarea id=""  rows="10" formControlName="message"></textarea>
+  </div>
+  <div>
+    <input type="submit" *ngIf="contactForm.status ==='VALID' ">
+  </div>
+
+<button (click)="updateContactForm()" *ngIf="contactForm.status ==='VALID' ">updatepatch</button>
+<button (click)="updateContactForm2()" *ngIf="contactForm.status ==='VALID' ">updateset</button>
+
+<p>Form Status: {{ contactForm.status }}</p>
+
+  <p>Value: {{contactForm.value.name}}</p>
+  <p>Value: {{contactForm.value.email}}</p>
+  <p>Value: {{contactForm.value.tel}}</p>
+  <p>Value: {{contactForm.value.message}}</p>
+
+</form>
